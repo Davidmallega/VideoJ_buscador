@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Enviar Multimedia</title>
+</head>
+<body>
+    <h2>Enviar mensaje con archivo</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="archivo">
+        <button type="submit">Enviar</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for msg in messages %}
+                <li>{{ msg }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
